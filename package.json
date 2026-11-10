@@ -4,6 +4,10 @@
   "description": "通用面试老师：DSH 左侧栏面试控制台 + profile 驱动的老师人设/考核点/题库/判分，内置定制向导，用户可个性化创建并切换多个自己的面试老师。",
   "type": "module",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomorrozy/dsh-generic-interview-teacher.git"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
