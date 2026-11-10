@@ -1,0 +1,90 @@
+{
+  "_comment": "复制整个目录到 <DSH_HOME>/interview-teacher/profiles/<你的id>/，改掉 id 和所有【】内容即可。字段说明见 docs/PROFILE.md；_comment 字段引擎会忽略。也可以在会话里说「定制面试老师」让向导帮你生成。",
+  "id": "my-teacher",
+  "name": "【老师名字，如：Java 后端面试老师】",
+  "subtitle": "【一句话简介，显示在面板标题下】",
+  "persona": {
+    "role": "【面试官身份，如：有 8 年经验的架构师】",
+    "style": "【语气风格，如：平和但爱追问细节】",
+    "scope": "【只考什么】",
+    "outOfScope": "【明确不考什么】",
+    "language": "中文"
+  },
+  "ids": {
+    "pattern": "^[A-Z]{1,4}\\d{1,3}$",
+    "label": "考核点"
+  },
+  "materials": "【默认材料描述：题目文档/简历/代码在哪、是什么】",
+  "checklistFile": "checklist.json",
+  "bankFile": "question-bank.json",
+  "checklist": [
+    {
+      "id": "A01",
+      "group": "【分组英文id】",
+      "groupLabel": "【分组中文名】",
+      "source": "【来源：简历/题目/代码文件】",
+      "module": "【具体项】",
+      "point": "【考什么：结论、依据、验证方法】",
+      "required": "必考",
+      "seconds": 120
+    }
+  ],
+  "questionBank": [
+    {
+      "id": "A01",
+      "question": "【题干】",
+      "followUps": ["第1层：【具体怎么做】", "第2层：【为什么/出问题怎么定位】"],
+      "hint": "【只给思路的提示】",
+      "answer": ["【参考答案要点1】", "【要点2】"],
+      "risk": "【答不好会暴露什么问题】",
+      "improve": "【改进建议】",
+      "troubleshoot": "【排查/验证框架】",
+      "seconds": 120
+    }
+  ],
+  "modes": [
+    { "id": "【分组id】", "label": "只看【分组名】", "groups": ["【分组id】"] }
+  ],
+  "followUp": {
+    "maxDepth": 2,
+    "layer1": "具体怎么做？关键参数与依据是什么？",
+    "layer2": "为什么这么做？出问题怎么定位？如果重来改哪里？"
+  },
+  "principles": [],
+  "timeBudget": [{ "topic": "【题型】", "range": "2–3 分钟" }],
+  "questionFormat": "【第X题】【来源：…】【覆盖考核点：Axx】【建议熟练回答时间：X分Y秒】",
+  "opening": "【开场白：自我介绍+规则+第一个问题】",
+  "commands": [
+    { "command": "提示", "effect": "给 1 条思路，不给完整答案" },
+    { "command": "跳过", "effect": "换下一题并记 skipped" },
+    { "command": "参考答案", "effect": "给回答框架" },
+    { "command": "结束面试", "effect": "生成 100 分制复盘" }
+  ],
+  "scoring": {
+    "weakWeight": 0.6,
+    "minCoverage": 60,
+    "grades": [
+      { "min": 85, "label": "优秀（可以顶住追问）" },
+      { "min": 70, "label": "良好（主线清楚，个别项会被追问）" },
+      { "min": 55, "label": "及格（能说清结论，但依据与验证偏弱）" }
+    ],
+    "fallbackGrade": "待加强（多数考核点只能背结论）",
+    "summaries": [{ "min": 70, "text": "【高分时的一句话总结】" }],
+    "fallbackSummary": "【低分时的一句话总结】"
+  },
+  "report": {
+    "title": "【复盘报告标题，留空用老师名】",
+    "riskTitle": "最容易被淘汰的 3 个风险点",
+    "prefix": "面试复盘"
+  },
+  "workspace": {
+    "default": "",
+    "recordDir": "面试记录"
+  },
+  "scan": {
+    "enabled": false,
+    "extensions": [".md", ".txt"],
+    "rules": []
+  },
+  "panel": { "label": "面试教练", "order": 4 }
+}

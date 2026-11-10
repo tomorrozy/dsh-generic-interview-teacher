@@ -1,0 +1,8 @@
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+state-*.json
+active.json
+面试记录/
+*.bak-*

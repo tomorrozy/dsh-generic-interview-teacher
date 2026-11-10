@@ -1,0 +1,54 @@
+{
+  "name": "dsh-generic-interview-teacher",
+  "version": "0.1.0",
+  "description": "通用面试老师：DSH 左侧栏面试控制台 + profile 驱动的老师人设/考核点/题库/判分，内置定制向导，用户可个性化创建并切换多个自己的面试老师。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "skill",
+    "profiles",
+    "templates",
+    "docs",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node scripts/selftest.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  },
+  "peerDependenciesMeta": {
+    "*": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "interview",
+    "coach",
+    "customizable"
+  ],
+  "license": "MIT"
+}

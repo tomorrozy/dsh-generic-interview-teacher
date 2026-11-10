@@ -1,0 +1,14 @@
+# dsh-generic-interview-teacher bundle patch: mounts the plugin into the host
+# composition of a dsh profile. The host half serves one JSON RPC route for the
+# browser half, registers the interview-teacher skill (assembled from the active
+# profile), the interview-teacher-customizer skill and the interview_* /
+# teacher_* tools; the browser half registers the left sidebar entry
+# (sidebar.panellist) and its global page (main keyed slot).
+- insert:
+    - id: dsh-generic-interview-teacher
+      name: 'dsh-generic-interview-teacher'
+      config:
+        # 被扫描/出题的工程目录。留空时用当前 profile 的 workspace.default，
+        # 再退回 DSH_COACH_WORKSPACE / 用户主目录。
+        # 也可以在面板顶部点「切换工程目录」临时改写（只存于本次进程）。
+        workspace: ''
